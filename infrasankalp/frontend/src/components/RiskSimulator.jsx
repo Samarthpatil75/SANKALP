@@ -100,7 +100,7 @@ export default function RiskSimulator() {
   const handleRunSimulation = async () => {
     setSimulating(true);
     try {
-      const res = await fetch('/api/simulate-risk', {
+      const res = await fetch('https://infrasankalp-api.onrender.com/api/simulate-risk', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
