@@ -73,7 +73,7 @@ export default function AIAssistantModal({ isOpen, onClose, onSelectProject }) {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/ai/assistant', {
+      const res = await fetch('https://infrasankalp-api.onrender.com/api/ai/assistant', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: q }),
