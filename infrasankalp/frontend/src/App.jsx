@@ -51,11 +51,11 @@ export default function App() {
   const fetchGlobalAnalytics = async () => {
     try {
       const [kpisRes, statesRes, sectorsRes, compRes, histRes] = await Promise.all([
-        fetch('/api/analytics/kpis'),
-        fetch('/api/analytics/states'),
-        fetch('/api/analytics/sectors'),
-        fetch('/api/analytics/model-comparison'),
-        fetch('/api/analytics/paimana-historical'),
+        fetch('https://infrasankalp-api.onrender.com/api/analytics/kpis'),
+        fetch('https://infrasankalp-api.onrender.com/api/analytics/states'),
+        fetch('https://infrasankalp-api.onrender.com/api/analytics/sectors'),
+        fetch('https://infrasankalp-api.onrender.com/api/analytics/model-comparison'),
+        fetch('https://infrasankalp-api.onrender.com/api/analytics/paimana-historical'),
       ]);
       const kpis = await kpisRes.json();
       const states = await statesRes.json();
@@ -91,7 +91,7 @@ export default function App() {
       if (filters.risk_tier !== 'All') params.append('risk_tier', filters.risk_tier);
       if (filters.status !== 'All') params.append('status', filters.status);
 
-      const res = await fetch(`/api/projects?${params.toString()}`);
+      const res = await fetch(`https://infrasankalp-api.onrender.com/api/projects?${params.toString()}`);
       const data = await res.json();
       setProjects(data.projects || []);
       setTotalProjects(data.total || 0);
