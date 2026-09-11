@@ -6,9 +6,9 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [
     react(),
-    base: '/SANKALP/',
     tailwindcss(),
   ],
+  base: '/SANKALP/',
   server: {
     port: 5173,
     proxy: {
